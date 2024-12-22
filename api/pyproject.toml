@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "my_saq"
+version = "0.1.0"
+description = ""
+authors = ["sion908"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+litestar = {extras = ["standard"], version = "^2.13.0"}
+litestar-saq = "^0.3.0"
+saq = {extras = ["redis"], version = "^0.19.0"}
+redis = "^5.2.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

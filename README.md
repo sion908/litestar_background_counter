@@ -1,0 +1,1 @@
+poetry run litestar --app basic:app workers run

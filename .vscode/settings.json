@@ -1,0 +1,11 @@
+{
+    "python.autoComplete.extraPaths": [
+      "api/.venv/lib/python3.11/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+      "api/.venv/lib/python3.11/site-packages",
+    ],
+    "python.analysis.exclude": [
+      "api/.venv/",
+    ],
+}

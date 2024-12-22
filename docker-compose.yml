@@ -1,0 +1,15 @@
+services:
+  app:
+    restart: unless-stopped
+    build: .
+    tty: true
+    ports:
+      - ${APP_PORT:-80}:80
+    volumes:
+      - ./api:/api
+    working_dir: /api
+
+  redis_server:
+    hostname: redis
+    container_name: redis_server
+    image: redis:latest
