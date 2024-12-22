@@ -4,12 +4,14 @@ services:
     build: .
     tty: true
     ports:
-      - ${APP_PORT:-80}:80
+      - ${APP_PORT:-8083}:8083
     volumes:
       - ./api:/api
+    command: poetry run litestar --app basic:app run --port 8083 --host 0.0.0.0
     working_dir: /api
+    depends_on:
+      - redis
 
-  redis_server:
+  redis:
     hostname: redis
-    container_name: redis_server
     image: redis:latest

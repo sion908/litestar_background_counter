@@ -31,3 +31,12 @@ RUN curl -sSL https://install.python-poetry.org/ | python && \
     poetry config virtualenvs.in-project true && \
     poetry self add poetry-plugin-export && \
     poetry self update
+
+# ワークディレクトリの設定
+WORKDIR /api
+
+# api ディレクトリの内容をコピー
+COPY ./api /api/
+
+# Poetry による依存関係のインストール
+RUN cd /api && poetry install
